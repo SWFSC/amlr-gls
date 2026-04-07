@@ -1,10 +1,6 @@
-# SWFSC-Template
+# amlr_gls
 
-The README provides a description of the repository. The README file will vary greatly depending on the repo contents. 
-
-## License
-
-User task: Choose an open source license, depending on the repo contents and the [latest NMFS guidance](https://nmfs-opensci.github.io/GitHub-Guide/#sec-license). You do not need to keep this 'License' section in your repo readme.
+The repo contains simple code snippits to support analysis of US AMLR data sets from the deployment of light-based geolocators on seabird and pinnipeds during hte austral winters of 2011, 2012, and 2014. These data are housed [will be housed] at NCEI at a DOI TBD.
 
 ## Disclaimer
 
