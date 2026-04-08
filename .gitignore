@@ -53,6 +53,7 @@ po/*~
 rsconnect/
 
 # Data folders
+raw_data/
 
 # others
 *.html

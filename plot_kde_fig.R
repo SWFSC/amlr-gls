@@ -5,23 +5,35 @@ plot_kde_fig<-function(){
   library(ggplot2)
   library(eks)
   library(ggOceanMaps)
+  library(here)
+
+  
   # 
+  #read log file for appending tag info
+  
+  path<-here()
+  path1<-paste(path,"/data/gls_deployment_log.csv", sep="")
+  log<-read.csv(path1, header=TRUE)
+  fy<-data.frame(Tag=log$Tag, Year=log$FieldYear)
   
   # read in the full GLS data set and filter for penguins from 2012, keeping only records that meet prior speed limits
-  path<-paste(here(),"/data/gls_data.csv", sep="")
-  gls<-read.csv(path, stringsAsFactors = FALSE)%>%
-    filter(FieldYearEnd==2012)%>%
-    filter(Spp=="ADPE" | Spp=="CHPE")%>%
-    filter(Month>3 & Month <6)%>%
+  path2<-paste(path,"/data/gls_data_ncei.csv", sep="")
+  gls<-read.csv(path2, stringsAsFactors = FALSE)%>%
+    merge(., fy, by="Tag") %>%
+    mutate(Month=month(as.Date(.$Date, format="%m/%d/%Y")))%>%
+    filter(Month%in%c(4,5))%>%
+    filter(Year==2012)%>%
+    filter(Species_Code=="ADPE" | Species_Code=="CHPE")%>%
     filter(Keep==TRUE)
   
+  
   # add directions to the remaining tags
-  # this assignment is based on the mean bearing of tags during the feather growth period as determeind for Hinke et al. 2015. Original code unknown.
-  path<-paste(here(), "/data/peng_directions.csv", sep="")
-  gls_directions<-read.csv(path, header=TRUE)
+  # this assignment is based on the mean bearing of tags during the feather growth period as determined for Hinke et al. 2015. Original code unknown.
+  path3<-paste(path, "/data/peng_directions.csv", sep="")
+  gls_directions<-read.csv(path3, header=TRUE)
   dirs<-data.frame(Tag=gls_directions$Tag, Direction=gls_directions$Direction)
   tt<-merge(gls, dirs, by="Tag")
-  tt$Spp_Dir<-paste(tt$Spp,tt$Direction, sep="-")
+  tt$Spp_Dir<-paste(tt$Species_Code,tt$Direction, sep="-")
   SPS<-unique(tt$Spp_Dir)
   
   # pull out the species by direction data, make sf and transform for kernal density analysis
