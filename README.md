@@ -1,4 +1,4 @@
-# amlr_gls
+# amlr-gls
 
 The repo contains simple functions and raw data to support analysis of US AMLR data sets from the deployment of light-based geolocators (GLS) on seabird and pinnipeds during the austral winters of 2011, 2012, and 2014. These data are permanently archived at [NCEI at a DOI TBD].
 
