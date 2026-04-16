@@ -7,8 +7,8 @@ library(ggOceanMaps)
 
 path<-here()
 path1<-paste(path,"/data/gls_deployment_log.csv", sep="")
-log<-read.csv(path1, header=TRUE)
-fy<-data.frame(Tag=log$Tag, Year=log$FieldYear, Spp=log$Species_Code)
+deploylog<-read.csv(path1, header=TRUE)
+fy<-data.frame(Tag=deploylog$Tag, Year=deploylog$Field_Year, Spp=deploylog$Species_Code)
 
 
 path2<-paste(path,"/data/gls_data_ncei.csv", sep="")
@@ -23,10 +23,11 @@ gls<-st_as_sf(gls, coords=c("Longitude","Latitude"))%>%
   st_set_crs(4326)%>%
   filter(Keep==TRUE)%>%
   st_transform(3031)
- 
+
+gls$Year<-as.factor(gls$Year) 
 
 p2<-basemap(-30, bathymetry=TRUE)+
-  geom_sf(data=gls, aes(color=as.factor(Year)), alpha=0.3)+
+  geom_sf(data=gls, aes(color=Year), alpha=0.3)+
   scale_color_discrete(palette=c("magenta","orange","red"))+
   facet_wrap(~Spp)+
   #theme(legend.background = element_blank())+

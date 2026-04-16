@@ -3,18 +3,18 @@ plot_kde_fig<-function(){
   library(dplyr)
   library(orsifronts)
   library(ggplot2)
+  library(ggnewscale)
   library(eks)
   library(ggOceanMaps)
   library(here)
+  library(lubridate)
 
-  
-  # 
   #read log file for appending tag info
   
   path<-here()
   path1<-paste(path,"/data/gls_deployment_log.csv", sep="")
   log<-read.csv(path1, header=TRUE)
-  fy<-data.frame(Tag=log$Tag, Year=log$FieldYear)
+  fy<-data.frame(Tag=log$Tag, Year=log$Field_Year)
   
   # read in the full GLS data set and filter for penguins from 2012, keeping only records that meet prior speed limits
   path2<-paste(path,"/data/gls_data_ncei.csv", sep="")
@@ -45,6 +45,14 @@ plot_kde_fig<-function(){
       st_transform(3031)
     out[[i]]<-st_kde(kdat)
   }
+  # add ID and reformat for ggplot
+  adpe<-st_get_contour(out[[1]],cont=c(75))%>%
+    mutate(ID="Adelie")
+  chpe_east<-st_get_contour(out[[2]], cont=c(75))%>%
+    mutate(ID="Chinstrap_East")
+  chpe_west<-st_get_contour(out[[3]], cont=c(75))%>%
+    mutate(ID="Chinstrap_West")
+  tt<-rbind(adpe, chpe_east, chpe_west)
   
   # prepare orsifronts
   orsi<-st_as_sf(orsifronts)%>%
@@ -53,14 +61,14 @@ plot_kde_fig<-function(){
   pf<-orsi[orsi$front=="pf",]
   saccf<-orsi[orsi$front=="saccf",]
   
-  
   #plot the map
   p1<-basemap(-45, bathymetry=TRUE)+
-    geom_sf(data=st_get_contour(out[[1]],cont=c(75)), fill="orange", alpha=0.5)+ 
-    geom_sf(data=st_get_contour(out[[2]],cont=c(75)), fill="magenta", alpha=0.5)+ 
-    geom_sf(data=st_get_contour(out[[3]],cont=c(75)),fill="green", alpha=0.5)+
+    new_scale_fill()+
+    geom_sf(data=tt, aes(fill=ID), alpha=0.5)+ 
+    scale_fill_manual(values=c("orange", "magenta","green"))+
+    guides(fill=guide_legend(override.aes=list(alpha=1)))+
     geom_sf(data=pf)+
     geom_sf(data=saccf)
-  
   p1
+ 
 }

@@ -1,4 +1,4 @@
-Tag,Site_Code,Deploy_Site,Deploy_Latitude,Deploy_Longitude,Species_Code,Common_Name,Species_Name,Sex,DeployDate,FieldYear
+Tag,Site_Code,Deploy_Site,Deploy_Latitude,Deploy_Longitude,Species_Code,Common_Name,Species_Name,Sex,Deploy_Date,Field_Year
 585,CS,Cape Shirrreff,-62.47,-60.77,AFS,Antarctic fur seal,Arctocephalus gazella,2,2/1/2011,2011
 577,CS,Cape Shirrreff,-62.47,-60.77,AFS,Antarctic fur seal,Arctocephalus gazella,2,2/5/2011,2011
 582,CS,Cape Shirrreff,-62.47,-60.77,AFS,Antarctic fur seal,Arctocephalus gazella,2,2/5/2011,2011
