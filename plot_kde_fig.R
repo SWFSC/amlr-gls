@@ -10,7 +10,6 @@ plot_kde_fig<-function(){
   library(lubridate)
 
   #read log file for appending tag info
-  
   path<-here()
   path1<-paste(path,"/data/gls_deployment_log.csv", sep="")
   log<-read.csv(path1, header=TRUE)
