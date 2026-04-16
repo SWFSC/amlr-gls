@@ -2,9 +2,9 @@
 
 The repo contains simple functions and raw data to support analysis of US AMLR data sets from the deployment of light-based geolocators (GLS) on seabird and pinnipeds during the austral winters of 2011, 2012, and 2014. These data are permanently archived at [NCEI at a DOI TBD].
 
-The `plot_raw_data` and `plot_kde_fig` functions create basic data displays from avialable data. 
+The `plot_raw_data` and `plot_kde_fig` functions create basic data displays from available data. Their output is illustrated in the `plots` folder.
 
-Other functions, including `process_TFgls`, `bias_estimation` and their associated helper functions are needed to process the raw data to estimate usuable location estimates. These old functions have not been tested and are provided as reference material only. They may have dependency on deprecated R packages. 
+Other functions, including `process_TFgls`, `bias_estimation` and their associated helper functions were used to process the raw data to estimate usable location estimates. These old functions are 1) neither intended nor required for use with the current data set, 2) have not been tested, and 3) are provided as reference material only. They may have dependency on deprecated R packages.
 
 ## Disclaimer
 
