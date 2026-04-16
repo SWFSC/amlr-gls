@@ -4,7 +4,7 @@ The repo contains simple functions and raw data to support analysis of US AMLR d
 
 The `plot_raw_data` and `plot_kde_fig` functions create basic data displays from available data. Their output is illustrated in the `plots` folder.
 
-Other functions, including `process_TFgls`, `bias_estimation` and their associated helper functions were used to process the raw data to estimate usable location estimates. These old functions are 1) neither intended nor required for use with the current data set, 2) have not been tested, and 3) are provided as reference material only. They may have dependency on deprecated R packages.
+Old functions is the `old scripts` folder, including `process_TFgls`, `bias_estimation` and their associated helper functions, were used to process and estimate usable location estimates from raw tag downloads. These old functions are 1) neither intended nor required for use with the current data set, 2) have not been tested fur full functionality, and 3) are provided as reference material only. They may have dependency on deprecated R packages.
 
 ## Disclaimer
 
