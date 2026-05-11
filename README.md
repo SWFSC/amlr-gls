@@ -6,7 +6,7 @@ Hinke J, Krause D, Woodman S (2026) Daily location estimates of Antarctic pinnip
 
 The `plot_raw_data` and `plot_kde_fig` functions create basic data displays from available data. Their output is illustrated in the [plots](plots) folder and the raw data is shown below.
 
-![plot of plot_raw_data](https://github.com/SWFSC/amlr-gls/tree/main/plots/raw_Data.jpg)
+![plot of plot_raw_data](https://github.com/SWFSC/amlr-gls/tree/main/plots/raw_Data.png)
 
 Old functions in the [old-scripts](old-scripts) folder, including `process_TFgls`, `bias_estimation` and their associated helper functions, were used to process and estimate usable location estimates from raw tag downloads. These old functions are 1) neither intended nor required for use with the current data set, 2) have not been tested for full functionality, and 3) are provided as reference material only. They may have dependency on deprecated R packages.
 
