@@ -12,7 +12,7 @@ Old functions in the [old-scripts](old-scripts) folder, including `process_TFgls
 
 # Useful references
 
-[Hinke JT, MJ Polito, ME Goebel, S Jarvis, CS Reiss, SR Thorrold, WZ Trivelpiece, GM Watters. 2015. Spatial and isotopic niche partitioning during winter in chinstrap and Adélie penguins from the South Shetland Islands. Ecosphere. 6:art125](http://doi.wiley.com/10.1890/ES14-00287.1)
+[Hinke JT, Polito MJ, Goebel ME, Jarvis S, Reiss CS, Thorrold SR, Trivelpiece WZ, Watters GM. 2015. Spatial and isotopic niche partitioning during winter in chinstrap and Adélie penguins from the South Shetland Islands. Ecosphere. 6:art125](http://doi.wiley.com/10.1890/ES14-00287.1)
 
 Polito MJ, Lamb KJ, Hinke JT. A winter’s tail: Feather amino acid isotopes quantify the non-breeding trophic niches of two Antarctic penguins. Biology Letters. _In review_
 
