@@ -2,9 +2,9 @@
 
 The repo contains simple functions and raw data to support analysis of US AMLR data sets from the deployment of light-based geolocators (GLS) on seabird and pinnipeds during the austral winters of 2011, 2012, and 2014. These data are permanently archived at [NCEI Accession 0314795](https://www.ncei.noaa.gov/archive/accession/0314795) and should be cited as:
 
-Hinke J, Krause D, Woodman S (2026) Daily location estimates of Antarctic pinnipeds and seabirds tracked with light-based geolocation (GLS) tags during the austral winters of 2011, 2012, and 2014 (NCEI Accession 0314795). [indicate subset used]. NOAA National Centers for Environmental Information. Unpublished Dataset. https://www.ncei.noaa.gov/archive/accession/0314795. Accessed [date].
+Hinke J, Krause D, Woodman S (2026) Daily location estimates of Antarctic pinnipeds and seabirds tracked with light-based geolocation (GLS) tags during the austral winters of 2011, 2012, and 2014 (NCEI Accession 0314795). [indicate subset used]. NOAA National Centers for Environmental Information. Unpublished Dataset. <https://www.ncei.noaa.gov/archive/accession/0314795>. Accessed [date].
 
-The `plot_raw_data` and `plot_kde_fig` functions create basic data displays from available data. Their output is illustrated in the [plots](plots) folder and the raw data is shown below.
+The `plot_kde_fig` and `plot_raw_data` functions create basic data displays from available data. The former reproduces a version of Figure 1 in Polito et al. [In review]. The latter function maps the entire data set by species and is shown below. The figures from both functions are housed in the [plots](plots) folder for reference.
 
 ![plot of plot_raw_data](plots/raw_Data.png)
 
