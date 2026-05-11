@@ -4,7 +4,9 @@ The repo contains simple functions and raw data to support analysis of US AMLR d
 
 Hinke J, Krause D, Woodman S (2026) Daily location estimates of Antarctic pinnipeds and seabirds tracked with light-based geolocation (GLS) tags during the austral winters of 2011, 2012, and 2014 (NCEI Accession 0314795). [indicate subset used]. NOAA National Centers for Environmental Information. Unpublished Dataset. https://www.ncei.noaa.gov/archive/accession/0314795. Accessed [date].
 
-The `plot_raw_data` and `plot_kde_fig` functions create basic data displays from available data. Their output is illustrated in the [plots](plots) folder.
+The `plot_raw_data` and `plot_kde_fig` functions create basic data displays from available data. Their output is illustrated in the [plots](plots) folder and the raw data is shown below.
+
+![plot of plot_raw_data](plots/raw_Data.jpg)
 
 Old functions in the [old-scripts](old-scripts) folder, including `process_TFgls`, `bias_estimation` and their associated helper functions, were used to process and estimate usable location estimates from raw tag downloads. These old functions are 1) neither intended nor required for use with the current data set, 2) have not been tested for full functionality, and 3) are provided as reference material only. They may have dependency on deprecated R packages.
 
